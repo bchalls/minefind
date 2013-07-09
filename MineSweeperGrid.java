@@ -1,4 +1,3 @@
-
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
@@ -125,8 +124,8 @@ public class MineSweeperGrid extends JPanel implements MouseInputListener, Actio
                         // but making sure not to loop around
                         if(panels.indexOf(curPanel)+y+(x*numTilesH) >= 0 && panels.indexOf(curPanel)+y+(x*numTilesH) < numTilesW*numTilesH)
                                 if(panels.get(panels.indexOf(curPanel)+y+(x*numTilesH)).isBomb())
-                                    if(!(y == -1 && panels.indexOf(curPanel) % 9 == 0))
-                                        if(!(y == 1 && (panels.indexOf(curPanel) + 1) % 9 == 0))
+                                    if(!(y == -1 && panels.indexOf(curPanel) % numTilesH == 0))
+                                        if(!(y == 1 && (panels.indexOf(curPanel) + 1) % numTilesH == 0))
                                             mineCount++;
                                     
                     }
